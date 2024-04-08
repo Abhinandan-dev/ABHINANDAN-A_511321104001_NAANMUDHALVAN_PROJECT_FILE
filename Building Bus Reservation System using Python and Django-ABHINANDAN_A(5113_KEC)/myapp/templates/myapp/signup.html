@@ -1,0 +1,86 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<style>
+    .container {
+        padding-top: 50px;
+    }
+    
+    .card-bg {
+        background: linear-gradient(to right, #6A1B9A, #9C27B0); /* Purple gradient */
+    }
+    
+    .card {
+        background: #f8f9fa; /* Light gray background */
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-header {
+        background-color: #757575; /* Grey header background */
+        color: white;
+    }
+    
+    .form-control {
+        border-radius: 5px;
+    }
+    
+    .btn-primary {
+        background-color: #6A1B9A; /* Purple button background */
+        border-radius: 5px;
+    }
+
+    /* Modified styles */
+    .card-title {
+        color: #FFFFFF; /* White text color */
+        font-size: 32px; /* Increased font size */
+        font-weight: bold; /* Bold text */
+        margin-bottom: 20px; /* Added space below the title */
+    }
+
+    /* Form label style */
+    .control-label {
+        font-weight: bold; /* Bold labels */
+        color: #757575; /* Grey label color */
+    }
+</style>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-7 col-sm-10 col-xs-12">
+            <div class="card rounded-0 card-bg">
+                <div class="card-header">
+                    <div class="card-title text-center h3 mb-0">Registration</div>
+                </div>
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <form action="{% url 'signup' %}" method="post" id="registration-form">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="email" class="control-label">Email:</label>
+                                <input name='email' class="form-control" type="text" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mobilenumber" class="control-label">Mobile No:</label>
+                                <input name='mobilenumber' class="form-control" type="text" id="mobilenumber" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="name" class="control-label">Username:</label>
+                                <input name='name' id="name" class="form-control" type="text" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="control-label">Password:</label>
+                                <input name='password' id="password" class="form-control" type="password" required>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-sm btn-primary rounded-0 w-100" form="registration-form">Create Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

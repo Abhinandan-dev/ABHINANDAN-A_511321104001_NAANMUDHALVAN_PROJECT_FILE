@@ -1,0 +1,76 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<style>
+    .container {
+        padding-top: 50px;
+    }
+    
+    .card-bg {
+        background: linear-gradient(to right, #00C9FF, #92FE9D);
+    }
+    
+    .card {
+        background: #f8f9fa; /* Light gray background */
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-header {
+        background-color: #007bff; /* Blue header background */
+        color: white;
+    }
+    
+    .form-control {
+        border-radius: 5px;
+    }
+    
+    .btn-primary {
+        background-color: #007bff;
+        border-radius: 5px;
+    }
+
+    /* Modified styles */
+    .card-title {
+        color: #007bff; /* Blue text color */
+        font-size: 28px; /* Increased font size */
+    }
+</style>
+
+<div class="container">
+    <div class="card card-bg">
+        <div class="card-body">
+            <h2 class="my-3 text-center text-light">Bus Reservation System</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+        <div class="col-lg-5 col-md-7 col-sm-10 col-xs-12">
+            <div class="card rounded-0">
+                <div class="card-header">
+                    <div class="card-title h3 fw-bold mb-0 text-center">Login</div>
+                </div>
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <form action="{% url 'signin' %}" method="post" id="signin-form">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="username" class="control-label">Username:</label>
+                                <input name='name' class="form-control" type="text" id="username" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="example-email-input" class="control-label">Password:</label>
+                                <input name='password' class="form-control" type="password" required>
+                            </div>
+                        </form>
+                        <p>{{error}}</p>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary btn-block w-100" form="signin-form">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

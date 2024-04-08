@@ -1,0 +1,23 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+<style>
+    .container {
+        padding-top: 50px;
+    }
+    
+    .alert-success {
+        background: linear-gradient(to right, #6A1B9A, #9C27B0); /* Purple gradient */
+        color: #757575; /* Grey text color */
+        border-color: #757575; /* Grey border color */
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mx-auto" style="margin-top: 5em">
+            <h1 class="alert alert-success">Your Account has been created successfully!</h1>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

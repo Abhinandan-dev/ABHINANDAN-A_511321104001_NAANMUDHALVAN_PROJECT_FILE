@@ -1,0 +1,49 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<style>
+    .container {
+        padding-top: 50px;
+    }
+    
+    .card {
+        background: linear-gradient(to right, #4CAF50, #2196F3);
+        color: white;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .card-body {
+        padding: 30px;
+    }
+    
+    .card-title {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .quote {
+        font-style: italic;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* Hover effect */
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    }
+</style>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">Bus Reservation System</h2>
+            <p class="lead text-center">Book your bus tickets easily!</p>
+            <p class="quote">"Life is a journey, travel it well."</p>
+            <p class="quote">"Adventure awaits, book your ride!"</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

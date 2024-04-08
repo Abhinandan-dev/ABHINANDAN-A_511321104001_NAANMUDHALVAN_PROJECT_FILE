@@ -1,0 +1,30 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<style>
+    .container {
+        padding-top: 50px;
+    }
+
+    .container {
+        background: linear-gradient(to right, #8e44ad, #3498db); /* Purple gradient background */
+        color: #555; /* Grey text color */
+    }
+
+    h1 {
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mx-auto" style="margin-top: 70px">
+            <h1>{{error}}</h1>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
